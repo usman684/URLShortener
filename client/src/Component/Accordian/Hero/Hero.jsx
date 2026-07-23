@@ -24,13 +24,10 @@ const Hero = () => {
 
       console.log("Sending request...");
 
-      const res = await axios.post(
-        "https://tinyurlserver-production.up.railway.app/save",
-        {
-          longUrl: longUrl,
-          alias: alias,
-        },
-      );
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/save`, {
+        longUrl: longUrl,
+        alias: alias,
+      });
 
       console.log("Response:", res.data);
 
