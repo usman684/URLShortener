@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from "./Component/Navbar/Navbar";
-import Hero from "./Component/Hero/Hero";
-import Accordion from "./Component/Accordian/Accordian";
-import Footer from "./Component/Footer/Footer";
+import Navbar from "./Component/Navbar/Navbar.jsx";
+import Hero from "./Component/Hero/Hero.jsx";
+import Accordion from "./Component/Accordian/Accordian.jsx";
+import Footer from "./Component/Footer/Footer.jsx";
 
 const App = () => {
   return (
