@@ -10,7 +10,11 @@ const app = express();
 
 connectDB();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://tinyurl-frontend-vert.vercel.app",
+  }),
+);
 app.use(express.json());
 
 app.use("/", URLRoute);
