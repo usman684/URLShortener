@@ -8,14 +8,18 @@ dotenv.config();
 
 const app = express();
 
-connectDB();
-
-app.use(
-  cors({
-    origin: "https://tinyurl-frontend-vert.vercel.app",
-  }),
-);
+app.use(cors());
 app.use(express.json());
+
+// ✅ Ensure DB connection before every request
+app.use(async (req, res, next) => {
+  try {
+    await connectDB();
+    next();
+  } catch (error) {
+    res.status(500).json({ ok: false, error: "Database connection failed" });
+  }
+});
 
 app.use("/", URLRoute);
 
